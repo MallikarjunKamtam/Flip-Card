@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+* {
+  background-color: #072227;
+  font-family: "Sacramento", cursive;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 3px 2px 6px black;
+}
+
+.content {
+  background-color: #92a9bd;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  width: 380px;
+}
+
+img {
+  width: 380px;
+  height: 380px;
+  border-radius: 10px;
+}
+
+.card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  text-align: center;
+  width: 100%;
+  transition: transform 2s;
+}
+
+.front-face {
+  backface-visibility: hidden;
+}
+
+.back-face {
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: rotateX(180deg);
+}
+
+.card:hover .card-inner {
+  transform: rotateX(-180deg);
+}
+
+.card:active .card-inner {
+  transform: rotateX(-180deg);
+}
